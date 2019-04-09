@@ -1,9 +1,10 @@
+apply plugin: "eclipse"
 apply plugin: 'java'
 apply plugin: 'application'
 
 archivesBaseName = "pokedex"
 version = '1.0'
-mainClassName = "App"
+mainClassName = "main.java.App"
 
 repositories {
  mavenCentral()

@@ -1,8 +1,11 @@
-import org.sql2o.*;
-import org.junit.*;
+package test.java;
 import static org.junit.Assert.*;
-import java.util.Arrays;
-import java.util.List;
+
+import org.junit.*;
+import org.sql2o.*;
+
+import main.java.Move;
+import main.java.Pokemon;
 
 public class MoveTest {
 

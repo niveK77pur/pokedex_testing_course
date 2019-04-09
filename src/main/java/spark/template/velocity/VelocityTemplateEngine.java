@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package spark.template.velocity;
+package main.java.spark.template.velocity;
 
 import java.io.StringWriter;
 import java.util.Map;

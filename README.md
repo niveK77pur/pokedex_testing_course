@@ -32,10 +32,10 @@ _A Java web app that stores the original 151 Pokemon in the Pokedex (using SQL d
 * _Clone repository to desktop_
 * _Use console to enter directory with all files_
 * _In a new console window run the command 'postgres' and keep running_
-* _In a new console window run the command 'psql' then 'CREATE DATABASE pokedex;'_
-* _In the same console window run the command 'psql' then 'CREATE DATABASE pokedex_test;'_
-* _In bash console run the command 'psql pokedex < pokedex.sql' to properly download the database file into the empty database you just created_
-* _In the same bash console run the command 'psql pokedex_test < pokedex_test.sql' to properly download the database file into the empty database you just created_
+* _In a new console window run the command 'psql -U postgres' then 'CREATE DATABASE pokedex;'_
+* _In the same console window run the command 'psql -U postgres' then 'CREATE DATABASE pokedex_test;'_
+* _In bash console run the command 'psql -U postgres pokedex < pokedex.sql' to properly download the database file into the empty database you just created_
+* _In the same bash console run the command 'psql -U postgres pokedex_test < pokedex.sql' to properly download the database file into the empty database you just created_
 * _(Alternative to downloading test database file: Run the command '\c pokedex' to connect to the database. To create the test database run the command 'CREATE DATABASE pokedex_test WITH TEMPLATE pokedex;')_
 * _RUNNING THE WEB APP_
 * _In console run the command 'gradle run'_

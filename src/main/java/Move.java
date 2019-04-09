@@ -1,6 +1,8 @@
-import java.util.Random;
+package main.java;
+
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Random;
+
 import org.sql2o.*;
 
 public class Move {

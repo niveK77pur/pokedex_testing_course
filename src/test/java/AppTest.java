@@ -1,3 +1,5 @@
+package test.java;
+
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
 import org.junit.Test;

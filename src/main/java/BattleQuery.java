@@ -1,3 +1,4 @@
+package main.java;
 import org.sql2o.*;
 
 public class BattleQuery {

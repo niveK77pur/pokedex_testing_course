@@ -1,5 +1,9 @@
+package test.java;
+
 import org.junit.rules.ExternalResource;
+
 import spark.Spark;
+import main.java.App;
 
 public class ServerRule extends ExternalResource {
 

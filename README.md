@@ -10,7 +10,7 @@
 
 #### _A Java web app that stores the original 151 Pokemon in the Pokedex (using SQL database) along with their moves which are used in a separate battle mode game._
 
-#### By _**Peter Beach, Adam Craig, Ashley Maceli and Kyle Wolfson**_
+#### Original game by _**Peter Beach, Adam Craig, Ashley Maceli and Kyle Wolfson**_
 
 ## DISCLAIMER
 
@@ -41,18 +41,6 @@ _A Java web app that stores the original 151 Pokemon in the Pokedex (using SQL d
 * _In console run the command 'gradle run'_
 * _Open your browser and go to http://localhost:4567/_
 
-## Known Bugs
-
-_Many images on full pokedex page. Run fine when files are local but if we decide to host elsewhere will need to implement a script for a type of lazy load for images to improve performance_
-
-## Support and contact details
-
-_For all issues and support, please contact:_
-* _Peter Beach at peterbeach2@gmail.com_
-* _Adam Craig at ajcraig@suffolk.edu_
-* _Ashley Maceli at ashley.maceli@gmail.com_
-* _Kyle Wolfson at wolfsonk@gmail.com_
-
 ## Technologies Used
 
 _Java, SQL, Spark, Velocity, HTML, CSS, JavaScript, Gradle, JUnit, FluentLenium_
@@ -62,6 +50,7 @@ _Java, SQL, Spark, Velocity, HTML, CSS, JavaScript, Gradle, JUnit, FluentLenium_
 The MIT License (MIT)
 
 Copyright (c) 2016 Peter Beach, Adam Craig, Ashley Maceli, Kyle Wolfson
+Copyright (c) 2020 Salah Ghamizi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

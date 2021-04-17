@@ -14,23 +14,37 @@ public class PokemonTest {
   public DatabaseRule database = new DatabaseRule();
 
   @Test
+  /* Pokomon instance is of class Pokemon (Unit Test)
+   * Create an instance of a Pokemon and make sure it is of type Pokemon.
+   */
   public void Pokemon_instantiatesCorrectly_true() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     assertEquals(true, myPokemon instanceof Pokemon);
   }
 
   @Test
+  /* Pokemon name is correctly set (Unit Test)
+   * Verify if the name given while instantiating is correctly set and
+   * extractable from the instance.
+   */
   public void getName_pokemonInstantiatesWithName_String() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     assertEquals("Squirtle", myPokemon.getName());
   }
 
   @Test
+  /* Verify that no Pokemons exist in the beginning (Unit Test)
+   * Check that the size of the list of all existing Pokemon is 0.
+   */
   public void all_emptyAtFirst() {
     assertEquals(Pokemon.all().size(), 0);
   }
 
   @Test
+  /* Equality of instances (Unit Test)
+   * Make sure two instance that were instantiated with the same attributes are
+   * considered equal.
+   */
   public void equals_returnsTrueIfPokemonAreTheSame_true() {
     Pokemon firstPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     Pokemon secondPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
@@ -38,6 +52,11 @@ public class PokemonTest {
   }
 
   @Test
+  /* Save a Pokemon (Integration Test)
+   * Make sure that saving a pokemon correctly adds it to the database by
+   * checking if the size of the list of all Pokemon is 1 after saving the
+   * first Pokemon.
+   */
   public void save_savesPokemonCorrectly_1() {
     Pokemon newPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     newPokemon.save();
@@ -45,6 +64,10 @@ public class PokemonTest {
   }
 
   @Test
+  /* Retrieve Pokemon from database given ID (Integration Test)
+   * Make sure that you can extract a saved Pokemon given its ID. Compare the
+   * extracted Pokemon with the one that was saved.
+   */
   public void find_findsPokemonInDatabase_true() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
@@ -53,6 +76,11 @@ public class PokemonTest {
   }
 
   @Test
+  /* Make the Pokemon move (Integration Test)
+   * Veryify that the first movement added to a Pokemon is equal to the
+   * movement that was given by comparing the movement that is stored in the
+   * Pokemon and the one that was provided to the Pokemon.
+   */
   public void addMove_addMoveToPokemon() {
     Move myMove = new Move("Punch", "Normal", 50.0, 100);
     myMove.save();
@@ -64,6 +92,13 @@ public class PokemonTest {
   }
 
   @Test
+  /* Pokemon gets deleted alongside its moves (Integration Test)
+   * When saving a Pokemon and a Move to the database, and adding the move to a
+   * Pokemon, we want to make sure the corresponding move is deleted from the
+   * database when we delete the Pokemon. This is done by checking that the
+   * size of the list of all moves and pokemon is zero after deleting the
+   * pokemon.
+   */
   public void delete_deleteAllPokemonAndMovesAssociations() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
@@ -76,6 +111,10 @@ public class PokemonTest {
   }
 
   @Test
+  /* Retrieve Pokemon from database given name (Integration Test)
+   * Make sure that you can extract a saved Pokemon given its name. Compare the
+   * extracted Pokemon with the one that was saved.
+   */
   public void searchByName_findAllPokemonWithSearchInputString_List() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
@@ -83,6 +122,10 @@ public class PokemonTest {
   }
 
   @Test
+  /* Attack Pokemon with Move (Integration Test)
+   * Create a Pokemon and a Move. Attack the Pokemon 4 times with the move and
+   * make sure the HP decreased accordingly.
+   */
   public void fighting_damagesDefender() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "Normal", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
@@ -91,9 +134,9 @@ public class PokemonTest {
     myMove.attack(myPokemon);
     System.out.println(myPokemon.hp);
     myMove.attack(myPokemon);
-        System.out.println(myPokemon.hp);
+    System.out.println(myPokemon.hp);
     myMove.attack(myPokemon);
-        System.out.println(myPokemon.hp);
+    System.out.println(myPokemon.hp);
     myMove.attack(myPokemon);
     assertEquals(400, myPokemon.hp);
   }

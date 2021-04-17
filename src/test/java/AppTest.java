@@ -11,19 +11,34 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+
+
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
 
-  @Rule
-  public DatabaseRule database = new DatabaseRule();
+  // @Rule
+  // public DatabaseRule database = new DatabaseRule();
+  public DatabaseRule database;
+  @BeforeEach
+  public void beforeEach() {
+      this.database = new DatabaseRule();
+  }
 
   @Override
   public WebDriver getDefaultDriver() {
     return webDriver;
   }
 
-  @ClassRule
-  public static ServerRule server = new ServerRule();
+  // @ClassRule
+  // public static ServerRule server = new ServerRule();
+  public static ServerRule server;
+  @BeforeAll
+  public void beforeAll() {
+      AppTest.server = new ServerRule();
+  }
+
 
   @Test
   /* Correct Page Test (Acceptance Test)

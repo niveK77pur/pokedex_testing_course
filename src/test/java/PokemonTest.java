@@ -2,12 +2,19 @@ package test.java;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.junit.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.sql2o.*;
 
 import main.java.Move;
 import main.java.Pokemon;
 
+@RunWith(Parameterized.class)
 public class PokemonTest {
 
   @Rule
@@ -20,6 +27,20 @@ public class PokemonTest {
   public void Pokemon_instantiatesCorrectly_true() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
     assertEquals(true, myPokemon instanceof Pokemon);
+  }
+
+  private final Pokemon myPokemon;
+  public PokemonTest(Pokemon myPokemon) {
+    this.myPokemon = myPokemon;
+  }
+
+  // Source for Parameterized tests:
+  // https://www.eviltester.com/post/junit/junit-4-parameterized-tests/
+  @Parameterized.Parameters
+  public static Collection<Object[]> data() {
+      List<Object[]> args = new ArrayList<>();
+      args.add(new Object[] { new Pokemon("Squirtle", "Water", "Normal", "A cute turtle", 50.0, 12, 16, false) });
+      return args;
   }
 
   @Test

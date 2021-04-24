@@ -1,0 +1,36 @@
+        ______________________________________________________
+_______|                                                      |_______
+\      |                  Q5 — Coverage score                 |      /
+ ›     |______________________________________________________|     ‹
+/_________)                                                (_________\
+
+--------------------- Instruction Coverage Score ---------------------
+
+I got the instruction coverage score by adding the jacoco plugin to
+the 'build.gradle' configuration. I then ran
+    'gradle jacocoTestReport'
+It will generate a report found in
+    build/reports/jacoco/test/html/index.html
+
+The total coverage indicated is 24%.
+
+---------- Analysis on instruction and branch coverage score ---------
+
+Disclaimer: I have not added tests to reach 100% instruction coverage.
+    I would have needed to install and setup Eclipse solely to answer
+    this, which seemed like not worth the trouble for me. The gradle
+    jacoco report I used above did not provide simple access to
+    coverage scores for individual lines. However, given the meaning
+    of both scores, this question was possible to answer without
+    coding anything.
+
+Instruction coverage score essentially informs us on how many lines of
+code were effectively covered by our tests. Branch coverage on the
+other hand indicates how many branches have been covered; a branch
+being for a example the different blocks in an if or switch statement.
+
+That said, if we have 100% instruction coverage we have covered every
+line of code using our tests. This obviously implies that we have also
+covered every branch in our code (as they are also defined using lines
+of code). Missing branches would therefore result in missing lines in
+the coverage.

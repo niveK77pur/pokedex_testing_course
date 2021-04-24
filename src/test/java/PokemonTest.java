@@ -20,20 +20,6 @@ public class PokemonTest {
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
-  @Test
-  /* Pokomon instance is of class Pokemon (Unit Test)
-   * Create an instance of a Pokemon and make sure it is of type Pokemon.
-   */
-  public void Pokemon_instantiatesCorrectly_true() {
-    Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
-    assertEquals(true, myPokemon instanceof Pokemon);
-  }
-
-  private final Pokemon myPokemon;
-  public PokemonTest(Pokemon myPokemon) {
-    this.myPokemon = myPokemon;
-  }
-
   // Source for Parameterized tests:
   // https://www.eviltester.com/post/junit/junit-4-parameterized-tests/
   @Parameterized.Parameters
@@ -41,6 +27,20 @@ public class PokemonTest {
       List<Object[]> args = new ArrayList<>();
       args.add(new Object[] { new Pokemon("Squirtle", "Water", "Normal", "A cute turtle", 50.0, 12, 16, false) });
       return args;
+  }
+
+  private final Pokemon myPokemon;
+  public PokemonTest(Pokemon myPokemon) {
+    this.myPokemon = myPokemon;
+  }
+
+  @Test
+  /* Pokomon instance is of class Pokemon (Unit Test)
+   * Create an instance of a Pokemon and make sure it is of type Pokemon.
+   */
+  public void Pokemon_instantiatesCorrectly_true() {
+    Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
+    assertEquals(true, myPokemon instanceof Pokemon);
   }
 
   @Test
@@ -148,7 +148,6 @@ public class PokemonTest {
    * make sure the HP decreased accordingly.
    */
   public void fighting_damagesDefender() {
-    Pokemon myPokemon = new Pokemon("Squirtle", "Water", "Normal", "A cute turtle", 50.0, 12, 16, false);
     myPokemon.save();
     myPokemon.hp = 500;
     Move myMove = new Move("Bubble", "Water", 50.0, 100);

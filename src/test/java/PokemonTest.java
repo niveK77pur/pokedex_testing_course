@@ -26,6 +26,8 @@ public class PokemonTest {
   public static Collection<Object[]> data() {
       List<Object[]> args = new ArrayList<>();
       args.add(new Object[] { new Pokemon("Squirtle", "Water", "Normal", "A cute turtle", 50.0, 12, 16, false) });
+      args.add(new Object[] { new Pokemon("Salamander", "Water", "Normal", "A cute turtle", 50.0, 12, 16, false) });
+      args.add(new Object[] { new Pokemon("Kevin", "Water", "Normal", "A cute human", 50.0, 12, 16, false) });
       return args;
   }
 

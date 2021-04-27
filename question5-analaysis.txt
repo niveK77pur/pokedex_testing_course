@@ -27,10 +27,16 @@ Disclaimer: I have not added tests to reach 100% instruction coverage.
 Instruction coverage score essentially informs us on how many lines of
 code were effectively covered by our tests. Branch coverage on the
 other hand indicates how many branches have been covered; a branch
-being for a example the different blocks in an if or switch statement.
+being for a example the different blocks/paths an if or switch
+statement could take depending on its conditions.
 
 That said, if we have 100% instruction coverage we have covered every
-line of code using our tests. This obviously implies that we have also
-covered every branch in our code (as they are also defined using lines
-of code). Missing branches would therefore result in missing lines in
-the coverage.
+line of code using our tests. However, we may have not covered every
+branch in our code (i.e. not all conditions for the branches were
+tackled). It is thus possible to have covered every line, but still
+miss branches due to uncovered conditions.
+
+Obtaining 100% branch coverage could therefore be obtained using
+parametrized tests. It will essentially extend the tests for
+instruction coverage such that all branches are being tested as well.
+(similar to Q3)

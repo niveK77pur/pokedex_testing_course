@@ -135,8 +135,9 @@ public class PokemonTest {
 
   @Test
   /* Retrieve Pokemon from database given name (Integration Test)
-   * Make sure that you can extract a saved Pokemon given its name. Compare the
-   * extracted Pokemon with the one that was saved.
+   * Make sure that you can extract a saved Pokemon by doing a case-insensitive
+   * search for part of its name. Compare the extracted Pokemon with the one
+   * that was saved.
    */
   public void searchByName_findAllPokemonWithSearchInputString_List() {
     Pokemon myPokemon = new Pokemon("Squirtle", "Water", "None", "A cute turtle", 50.0, 12, 16, false);
